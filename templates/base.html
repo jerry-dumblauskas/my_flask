@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <title>{{ title }} - MPG </title>
+        <img src="/static/allstate.jpeg">
+    </head>
+    <body class="bgx">
+        <div><a href="/">Reset</a></div>
+        {% block content %}{% endblock %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+    </body>
+</html>

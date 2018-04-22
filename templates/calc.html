@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.cylinders.label }}<br>
+            {{ form.cylinders(size=32) }}
+        </p>
+        <p>
+            {{ form.horsepower.label }}<br>
+            {{ form.horsepower(size=32) }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+
+    </form>
+    <label>The calculated mpg is: <b> {{mpg}}</b> </label>
+{% endblock %}
